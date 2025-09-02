@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/static/favicon.ico">
+  <meta charset="UTF-8">
+  <title>ApexLink – Payment</title>
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #e0e0e0;
+      font-family: 'Courier New', monospace;
+      padding: 30px;
+    }
+    h1 {
+      color: #00ff88;
+    }
+    .address-box {
+      background-color: #1c1c1c;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 8px #00ff88;
+    }
+    .label {
+      color: #00ffcc;
+      font-weight: bold;
+    }
+    .hash {
+      font-size: 0.8em;
+      color: #888;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Payment Page</h1>
+  <p class="hash">Order Hash: <code>{{ hash }}</code></p>
+
+  <div class="address-box">
+    <p class="label">Solana Address:</p>
+    <p>{{ addresses.solana }}</p>
+  </div>
+
+  <div class="address-box">
+    <p class="label">Monero Address:</p>
+    <p>{{ addresses.monero }}</p>
+  </div>
+
+  <div class="address-box">
+    <p class="label">Price to pay (USD):</p>
+    <p>{{ addresses.usd_price }}</p>
+  </div>
+  <p>The user is responsible for doing the conversion from the price in usd to the cryptocurrency the accepted exchange rate will be the one active when the transaction is issued from the user to the page. The page has reasonable error margins for payment recieving.</p>
+  <p>Please send payment to only one address. We will detect your payment and continue the process.</p>
+</body>
+</html>

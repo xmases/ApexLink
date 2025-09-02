@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/static/favicon.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ApexLink Help Manual</title>
+  <style>
+    .back-button {
+  background-color: #00ff88;
+  color: #000;
+  font-family: 'Courier New', monospace;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 40px auto 0 auto;
+  display: block;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+}
+
+.back-button:hover {
+  background-color: #00cc66;
+}
+
+    body {
+      background-color: #0f0f0f;
+      color: #e0e0e0;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      padding: 40px;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      color: #00ff88;
+    }
+
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    hr {
+      border: 1px solid #00ff88;
+      margin: 30px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📘 ApexLink Help Manual</h1>
+
+    <div class="section">
+      <h2>Overview</h2>
+      <p>
+        ApexLink is a privacy-oriented crypto-based intermediary service. This manual will guide you through its usage and address the most common doubts and processes.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>How to Order</h2>
+      <ol>
+        <li><strong>Link or Order Hash:</strong> Use this field to submit a product link or check your order hash.</li>
+        <li><strong>Address or Pickup Point:</strong> Use a pickup point if possible. This field is only visible to staff and not shown in public order checks.</li>
+        <li><strong>Email:</strong> You’ll receive updates and payment instructions here.</li>
+        <li><strong>Submit/Check Button:</strong> The system detects whether you’re placing or checking an order based on input.</li>
+      </ol>
+    </div>
+
+    <div class="section">
+      <h2>Order Lifecycle</h2>
+      <p>
+        Orders are reviewed within 24 hours. In exceptional cases, delays will be explained to the user.
+        If accepted, payment instructions will be available. Users have 7 days to pay. If paid incorrectly, within acceptable internal error limits, the user will be contacted for refund address.
+      </p>
+      <p>
+        If a product is later determined to be unshippable, the full amount (including flat fee) is refunded. Refunds are processed manually via email.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Modifications and Cancellations</h2>
+      <ul>
+        <li>Orders can be modified by email only, to protect privacy.</li>
+        <li>Invalid or unsupported store links are rejected with correction suggestions.</li>
+        <li>Multiple valid orders per email are allowed unless flagged by internal anti-spam systems.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Payments</h2>
+      <ul>
+        <li>Accepted cryptos: Monero and Solana.</li>
+        <li>Over or underpayments outside acceptable margins will result in refund procedures via email.</li>
+        <li>Double payments will also be handled via refund to an address you provide.</li>
+        <li>Commission changes are announced on the main page and take immediate effect from the publication date. Comissions may also be charged depending on the current average market exchange fee</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Product Issues and Refunds</h2>
+      <ul>
+        <li>Refunds are granted with reasonable proof (clear photos/videos).</li>
+        <li>If suspicious activity is detected, stricter verification may be requested.</li>
+        <li>Return shipping is paid by the user (up to €7.50).</li>
+        <li>All refund decisions are ultimately at ApexLink’s discretion.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Privacy & Security</h2>
+      <ul>
+        <li>We store only vague, non-identifiable data.</li>
+        <li>In the rare case of a database breach, no severe privacy leaks are expected.</li>
+        <li>All orders are manually reviewed to avoid illegal or suspicious content.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Support</h2>
+      <ul>
+        <li>Support is available in all languages. Spanish and English are preferred for best results.</li>
+        <li>Contact can be made through any official channel, but most inquiries are rerouted to the current support email.</li>
+	<li>If support delays exceed 72 hours, monetary compensation may be considered based on internal review.</li> <li>For any further support go to aplinkhelp@proton.me this email will be used for all tasks while in beta.</li>
+      </ul>
+    </div>
+
+    <hr/>
+    <div class="section">
+      <h2>❓ FAQ</h2>
+      <p><strong>Q: Is my address visible when I check my order?</strong><br/>A: No, it is only stored securely and is not shown in public check modes.</p>
+      <p><strong>Q: Can I change my address?</strong><br/>A: Yes, only by emailing the official support.</p>
+      <p><strong>Q: What happens if I forget to save my order hash?</strong><br/>A: Unfortunately, there’s no recovery process. Keep it safe.</p>
+      <p><strong>Q: Can I pay later?</strong><br/>A: Yes, you have 7 days from order acceptance.</p>
+    </div>
+  </div>
+<button class="back-button" onclick="window.location.href='/'">⬅️ Back to Home</button>
+</body>
+</html>

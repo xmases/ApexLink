@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ApexLink — Pay Anonymously</title>
+  <link rel="icon" href="/static/favicon.ico">
+  <style>
+    :root{
+      --bg:#0b0b0c;--card:#121214;--muted:#1b1b1f;--text:#e7f6ef;--sub:#b6f5db;--brand:#00ff88;--brand2:#00c26d;--accent:#00ffcc;--danger:#ff4d6d;
+      --shadow:0 0 0 1px rgba(0,255,136,.12),0 8px 30px rgba(0,0,0,.45),0 0 40px rgba(0,255,136,.05);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#0e1011);color:var(--text);font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,"Liberation Mono","Courier New",monospace;}
+    a{color:var(--accent)}
+    .wrap{max-width:980px;margin:0 auto;padding:20px}
+
+    /* Header */
+    .topbar{display:flex;align-items:center;gap:12px;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:40px;height:40px;border-radius:10px;box-shadow:0 0 14px rgba(0,255,136,.35)}
+    .brand h1{margin:0;font-size:22px;color:var(--brand)}
+    .beta{padding:2px 8px;border:1px solid var(--brand2);border-radius:999px;color:var(--sub);font-size:12px;opacity:.9}
+
+    /* Hero */
+    .hero{margin:28px 0;padding:22px;border-radius:16px;background:radial-gradient(1200px 400px at 50% -20%,rgba(0,255,136,.08),transparent),var(--card);box-shadow:var(--shadow)}
+    .hero h2{margin:0 0 8px 0;font-size:32px;letter-spacing:.5px;color:var(--brand)}
+    .hero p{margin:0;color:#d6f7e9;opacity:.95}
+
+    /* Trust row */
+    .trust{display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));gap:12px;margin:18px 0 6px}
+    .pill{background:var(--muted);border:1px solid rgba(0,255,136,.18);border-radius:999px;padding:8px 12px;text-align:center;color:#dffcef;font-size:13px}
+
+    /* Steps */
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+    .step{background:var(--card);border:1px solid rgba(0,255,136,.15);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
+    .step .n{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:var(--brand);color:#000;font-weight:700;margin-right:8px}
+    .step h4{margin:0 0 6px 0}
+    .step p{margin:0;color:#c7f3e3;opacity:.9}
+
+    /* Form card */
+    .card{margin-top:24px;background:var(--card);border:1px solid rgba(0,255,136,.18);border-radius:18px;box-shadow:var(--shadow);padding:16px}
+    .card h3{margin:0 0 8px 0;color:var(--accent)}
+    .row{display:flex;gap:10px;align-items:flex-start;margin:10px 0}
+    .row label{min-width:140px;color:#c9ffe9;font-size:14px;padding-top:10px}
+    textarea, input{flex:1;background:#121316;border:1px solid #262a2f;color:#a6ffe1;border-radius:10px;padding:12px 12px;font-size:14px;resize:vertical;min-height:46px}
+    .help{border:1px solid rgba(0,255,136,.35);background:#0f1513;color:var(--accent);border-radius:10px;padding:10px;font-size:13px}
+
+    .cta{display:flex;gap:12px;align-items:center;margin-top:8px}
+    .btn{background:var(--brand);color:#00150a;border:0;padding:12px 16px;border-radius:12px;font-weight:800;cursor:pointer}
+    .btn:hover{background:var(--brand2)}
+    .ghost{background:transparent;color:var(--accent);border:1px solid rgba(0,255,136,.32)}
+
+    /* Result */
+    .result{margin-top:18px;border:1px dashed rgba(0,255,136,.25);border-radius:12px;padding:14px;background:#0e1312}
+    .kv{display:grid;grid-template-columns:160px 1fr;gap:8px}
+
+    /* Footer */
+    footer{margin:28px 0 14px;text-align:center;color:#b0eeda;font-size:13px;opacity:.85}
+
+    /* Responsive */
+    @media (max-width:820px){
+      .trust{grid-template-columns:repeat(2,1fr)}
+      .steps{grid-template-columns:1fr}
+      .row{flex-direction:column}
+      .row label{padding-top:0}
+      .kv{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="ApexLink logo">
+        <h1>ApexLink</h1>
+        <span class="beta">BETA</span>
+      </div>
+      <button class="btn ghost" onclick="location.href='/help'">❓ Help</button>
+    </header>
+
+    <section class="hero">
+      <h2>Buy Anything Online — Pay in Monero. No KYC.</h2>
+      <p>We purchase on your behalf and deliver to you. Private. Instant. Untraceable.</p>
+      <div class="trust">
+        <div class="pill">🛡️ RSA‑encrypted addresses</div>
+        <div class="pill">🪙 7.5% flat commission</div>
+        <div class="pill">🕶️ No ID. No KYC.</div>
+        <div class="pill">⚡ Monero · SOL accepted</div>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h4>Paste product link</h4><p>Or paste an existing order hash to check status.</p></div>
+        <div class="step"><div class="n">2</div><h4>Get price & pay in crypto</h4><p>We show the exact total. You pay to a unique address.</p></div>
+        <div class="step"><div class="n">3</div><h4>Receive your order</h4><p>Ship to a pickup point or address of your choice.</p></div>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="start">
+      <h3 id="start">Start a Private Order</h3>
+      <div class="row">
+        <label for="textInput1">Step 1 — Link or Order Hash</label>
+        <textarea id="textInput1" rows="3" placeholder="Paste the product URL (or an existing order hash to check status)"></textarea>
+      </div>
+      <div class="row">
+        <label for="textInput3">Delivery Address</label>
+        <textarea id="textInput3" rows="2" placeholder="Prefer a pickup point for privacy. Include country if using a full address."></textarea>
+      </div>
+      <div class="row">
+        <label for="textInput4">Email (optional)</label>
+        <input id="textInput4" type="email" placeholder="Use privacy‑friendly email. We'll never send your address by email."/>
+      </div>
+      <div class="help">Your address is encrypted in your browser before submission. We store only what is necessary to fulfill the order.</div>
+      <div class="cta">
+        <button class="btn" onclick="sendToServer()">Get Price & Payment Instructions</button>
+        <button class="btn ghost" onclick="toggleHow()">How it works</button>
+      </div>
+
+      <div id="how" class="help" style="display:none;margin-top:10px">
+        <b>Process:</b> Paste link → Get a unique quote + payment address → Pay in Monero or SOL → We purchase and ship → Check status anytime using your order hash.
+      </div>
+
+      <div class="result" id="result" style="display:none">
+        <div class="kv">
+          <div><b>Timestamp:</b></div><div id="timestamp"></div>
+          <div><b>Order Hash:</b></div><div id="hash"></div>
+          <div><b>Payment Address:</b></div><div id="address"></div>
+          <div><b>Status:</b></div><div id="status"></div>
+          <div><b>Email:</b></div><div id="email"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <a href="/legal">🔒 Privacy & Legal Terms</a>
+    </footer>
+  </div>
+
+  <!-- Minimal JS hooks; assume your /static/script.js defines sendToServer() -->
+  <script src="/static/script.js"></script>
+  <script>
+    function toggleHow(){
+      const el=document.getElementById('how');
+      el.style.display = (el.style.display==='none'||!el.style.display)?'block':'none';
+    }
+    // Optional: expose a function your backend can call to reveal result panel
+    function showResult(){document.getElementById('result').style.display='block'}
+  </script>
+</body>
+</html>
